@@ -14,6 +14,81 @@ footer,header,hgroup,menu,nav,output,section,summary,time,audio,video {
     color: white;
 }
 
+/*
+#######################################################################################
+#######################################################################################
+######### Cookie Banner ###############################################################
+#######################################################################################
+#######################################################################################
+
+*/
+
+.cookie_banner {
+    width: 300px;
+    height: 220px;
+
+    padding: 15px;
+
+    white-space: unset;
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    border: 2px white solid;
+
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.cookie_banner > .cookie_text {
+    width: 270px;
+    height: 80px;
+
+    border: 2px white solid;
+
+    padding-top: 20px;
+
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.cookie_banner > .cookie_accept {
+    width: 200px;
+    height: 60px;
+
+    border: 2px white solid;
+
+    font-size: 40px;
+    line-height: 40px;
+
+    padding-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+
+/*
+#######################################################################################
+#######################################################################################
+######### Page Elements ###############################################################
+#######################################################################################
+#######################################################################################
+
+*/
+/*
+######################################################
+######################################################
+######### KeyFrames ##################################
+######################################################
+######################################################
+
+*/
 @keyframes flashing_hard_k {
     0% { opacity: 1.0; }
     49.9% { opacity: 1.0; }
@@ -228,6 +303,8 @@ right_icon {
 }
 #bottombar >  a,
 #bottombar > div{
+    text-align: center;
+    padding-left: 3px;
     margin: auto;
     margin-bottom: 1px;
     display: inline-block;

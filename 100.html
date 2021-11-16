@@ -2,6 +2,10 @@
 <html lang="en">
 <div style="visibility: hidden">{% load crispy_forms_tags static %}</div>
 
+<div class="cookie_banner">
+    <div class="cookie_text">Wir verwenden keine Cookies</div>
+    <div class="cookie_accept">Accept</div>
+</div>
 
 <script src="./jquery_3.6.0.js"></script>
 
@@ -43,9 +47,9 @@
 &#xe202;&#xe20f;&#xe204; </div>
 
         </div>
+        </div>
+
     </div>
-
-
 
     <div id="body">
         <div class="textBlock">
@@ -53,9 +57,9 @@
             <div class="rightSpace">dolor</div>
         </div>
     </div>
-        <div class="teletext">
+        <div class="teletext"></div>
 
-        <div>
+
 
 
     <div id="bottombar">
@@ -129,6 +133,11 @@ async function updateTime() {
 
 }
 updateTime()
+
+$(".cookie_accept").click(function(){
+  $(".cookie_banner").hide();
+});
+
 </script>
 
 
