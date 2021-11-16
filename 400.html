@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags static %}
+<script src="./jquery_3.6.0.js"></script>
+<link href="./HLMT_Stylesheet.css" rel="stylesheet">
+<link rel="icon" href="./Logo_Quadrat.ico" type="image/x-icon">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="topbar">
+        <div id="timeOutput" style="color: black">
+
+
+        </div>
+        <div id="rubrik" class="teletext" style="float: left; z-index: 99999"><span class="redbg"> &#xe228;&#xe21c;&#xe224;            &#xe23c;     </span>
+<span class="redbg"> &#xe22a;&#xe215; &#xe225;           &#xe23f;     </span>
+<span class="redbg"> &#xe22a;&#xe215; &#xe21a;           &#xe23f;     </span>
+<span class="redbg"> &#xe22a;&#xe235;&#xe218;&#xe201;           &#xe23f;     </span>
+<span class="redbg"> &#xe22a;&#xe215; &#xe220;&#xe216;&#xe229;&#xe210;&#xe228;&#xe217;&#xe22b;&#xe214;&#xe22a;&#xe217;&#xe209;&#xe210;&#xe23f; &#xe238;&#xe203;&#xe234; </span>
+<span class="redbg"> &#xe22a;&#xe215; &#xe22a;&#xe217;&#xe203;&#xe201;&#xe22a;&#xe215;&#xe22a;&#xe215;&#xe22a;&#xe215;&#xe220;&#xe205;&#xe23f; &#xe23f;&#xe203;&#xe203; </span>
+<span class="redbg"> &#xe20a;&#xe205;  &#xe209;&#xe20c; &#xe202;&#xe20d;&#xe20e;&#xe201;&#xe22a;&#xe217;&#xe201; &#xe20f; &#xe202;&#xe20c;&#xe204; </span>
+<span class="redbg">            &#xe202;&#xe201;        </span>
+</div>
+        <div class="colour4bg" style="height: 75px;"></div>
+    </div>
+
+
+
+    <div id="body">
+        <a href="401.html">
+        <div class="peopleFrame">
+            <div class="picture teletext" style="font-size: 20px; line-height: 20px">  &#xe220;&#xe224; &#xe220;&#xe224;
+  &#xe215; &#xe203;&#xe201;&#xe202;&#xe214;
+ &#xe22a; &#xe204;&#xe218;&#xe210;&#xe204;&#xe22a;
+ &#xe215;      &#xe215;
+&#xe228;&#xe201;      &#xe229;
+&#xe20a;&#xe210;      &#xe20a;&#xe218;&#xe223;&#xe224;
+ &#xe225; &#xe215;&#xe214; &#xe214;&#xe215; &#xe20d;&#xe206;&#xe21a;
+  &#xe203;&#xe20d;&#xe207;&#xe203;&#xe20d;&#xe207;&#xe203;&#xe203;&#xe203;</div>
+            <div class="label">
+                <div class="name">Mr. Miaugi</div>
+                <div class="department">CTO | CSGO | Engineering</div>
+            </div>
+        </div>
+        </a>
+         <a href="401.html">
+        <div class="peopleFrame">
+            <div class="picture teletext" style="font-size: 20px; line-height: 20px">  &#xe220;&#xe224; &#xe220;&#xe224;
+  &#xe215; &#xe203;&#xe201;&#xe202;&#xe214;
+ &#xe22a; &#xe204;&#xe218;&#xe210;&#xe204;&#xe22a;
+ &#xe215;      &#xe215;
+&#xe228;&#xe201;      &#xe229;
+&#xe20a;&#xe210;      &#xe20a;&#xe218;&#xe223;&#xe224;
+ &#xe225; &#xe215;&#xe214; &#xe214;&#xe215; &#xe20d;&#xe206;&#xe21a;
+  &#xe203;&#xe20d;&#xe207;&#xe203;&#xe20d;&#xe207;&#xe203;&#xe203;&#xe203;</div>
+            <div class="label">
+                <div class="name">Mr. Miaugi</div>
+                <div class="department">CTO | CSGO | Engineering</div>
+            </div>
+        </div>
+        </a>
+    </div>
+
+
+
+
+    <div id="bottombar">
+        <a href="100.html" class="colour1">Information <div class="id_nr"><pre class="colour1">[</pre>100<pre class="colour1">]</pre></div></a>
+        <a href="200.html" class="colour2">Disciplines <div class="id_nr"><pre class="colour2">[</pre>200<pre class="colour2">]</pre></div></a>
+        <a href="300.html" class="colour3">Tools <div class="id_nr"><pre class="colour3">[</pre>300<pre class="colour3">]</pre></div></a>
+
+        <a href="400.html" class="colour4">People <div class="id_nr"><pre class="colour4">[</pre>400<pre class="colour4">]</pre></div></a>
+        <a href="500.html" class="colour5">Contact <div class="id_nr"><pre class="colour5">[</pre>500<pre class="colour5">]</pre></div></a>
+        <a href="600.html" class="colour6">Ads <div class="id_nr"><pre class="colour6">[</pre>600<pre class="colour6">]</pre></div></a>
+    </div>
+</div>
+
+
+<script>
+
+const timeField = document.getElementById("timeOutput")
+console.log(timeField)
+
+async function updateTime() {
+    var seconds = ""
+    var minutes = ""
+    var hours = ""
+    var dt = new Date();
+
+    if (dt.getSeconds() % 2 == 0){
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + ":" + minutes + ":" + seconds + "</span>"
+
+    } else {
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + " " + minutes + " " + seconds + "</span>"
+
+    }
+    $("#time").remove()
+    $("#timeOutput").append(time);
+    console.log(time)
+    setTimeout(() => {
+                updateTime();
+            }, 200)
+
+
+}
+updateTime()
+</script>
+
+
+</body>
+</html>

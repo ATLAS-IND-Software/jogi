@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags static %}
+<script src="./jquery_3.6.0.js"></script>
+
+<link href="./HLMT_Stylesheet.css" rel="stylesheet">
+<link rel="icon" href="./Logo_Quadrat.ico" type="image/x-icon">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<div id="main">
+
+    <div id="topbar">
+        <div id="timeOutput"></div>
+        <div id="linie_rot" style=""></div>
+    </div>
+
+    <div id="text1" class="textBlock">
+        <div class="leftSpace">Linker Text</div>
+        <div class="rightSpace">200</div>
+    </div>
+
+    <div id="text2mitlink" class="textBlock">
+        <div class="leftSpace">Linker Text 2</div>
+        <div class="rightSpace"><a href="{% url 'add' %}">300</a></div>
+    </div>
+
+        <div id="linie_gruen"></div>
+    <div id="logo" class="textBlock">
+
+        <div class="rightSpace teletext flashing_hard">
+&#xe22a;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe213;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe215;
+&#xe22a;  &#xe228;   &#xe214;  &#xe215;  &#xe214;     &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;  &#xe215;     &#xe215;
+&#xe22a;  &#xe22a;&#xe230;&#xe230;&#xe230;&#xe215;  &#xe215;  &#xe215;     &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;  &#xe215;     &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;  &#xe215;     &#xe215;
+&#xe22a;  &#xe202;   &#xe201;  &#xe215;  &#xe203;&#xe203;&#xe203;&#xe203;&#xe201; &#xe215;
+&#xe22a;&#xe202;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe217;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe203;&#xe201;&#xe215;
+&#xe22a;  &#xe228;&#xe210; &#xe220;&#xe214;  &#xe215;  &#xe20c;&#xe22c;&#xe20c;&#xe204;  &#xe215;
+&#xe22a;  &#xe22a;&#xe202;&#xe20c;&#xe201;&#xe215;  &#xe215;   &#xe22a;    &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;   &#xe22a;    &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;   &#xe22a;    &#xe215;
+&#xe22a;  &#xe22a;   &#xe215;  &#xe215;   &#xe22a;    &#xe215;
+&#xe22a;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe231;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe230;&#xe215;
+<div style="clear: both"></div>
+        </div>
+
+    </div>
+        <div id="linie_gruen" class="flashing_soft"></div>
+
+    <div id="bottombar">
+        <a href="100.html" class="colour1">Information <div class="id_nr"><pre class="colour1">[</pre>100<pre class="colour1">]</pre></div></a>
+        <a href="200.html" class="colour2">Disciplines <div class="id_nr"><pre class="colour2">[</pre>200<pre class="colour2">]</pre></div></a>
+        <a href="300.html" class="colour3">Tools <div class="id_nr"><pre class="colour3">[</pre>300<pre class="colour3">]</pre></div></a>
+
+        <a href="400.html" class="colour4">People <div class="id_nr"><pre class="colour4">[</pre>400<pre class="colour4">]</pre></div></a>
+        <a href="500.html" class="colour5">Contact <div class="id_nr"><pre class="colour5">[</pre>500<pre class="colour5">]</pre></div></a>
+        <a href="600.html" class="colour6">Ads <div class="id_nr"><pre class="colour6">[</pre>600<pre class="colour6">]</pre></div></a>
+    </div>
+</div>
+
+
+<script>
+
+const timeField = document.getElementById("timeOutput")
+console.log(timeField)
+
+async function updateTime() {
+    var seconds = ""
+    var minutes = ""
+    var hours = ""
+    var dt = new Date();
+
+    if (dt.getSeconds() % 2 == 0){
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + ":" + minutes + ":" + seconds + "</span>"
+
+    } else {
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + " " + minutes + " " + seconds + "</span>"
+
+    }
+    $("#time").remove()
+    $("#timeOutput").append(time);
+    console.log(time)
+    setTimeout(() => {
+                updateTime();
+            }, 200)
+
+
+}
+updateTime()
+</script>
+
+
+</body>
+</html>

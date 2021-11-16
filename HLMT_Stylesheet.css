@@ -1,0 +1,519 @@
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,
+address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,
+sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,
+tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,
+footer,header,hgroup,menu,nav,output,section,summary,time,audio,video {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+    user-select: none   ;
+}
+* {
+    color: white;
+}
+
+@keyframes flashing_hard_k {
+    0% { opacity: 1.0; }
+    49.9% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 0.0; }
+}
+
+.flashing_hard {
+    text-decoration: blink;
+    animation-name: flashing_hard_k;
+    animation-duration: 0.75s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@keyframes flashing_soft_k {
+    0% { opacity: 1.0; }
+    100% { opacity: 0.0; }
+}
+
+.flashing_soft {
+    text-decoration: blink;
+    animation-name: flashing_soft_k;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+@font-face {
+    font-family: 'DjangoITC';
+    src: url('MODE7GX3(1).TTF ');
+}
+
+h1 {
+    font-family: "DjangoITC", monospace;
+}
+
+div {
+    color: white;
+    font-family: "DjangoITC", monospace;
+}
+
+
+
+.lefttop {
+    position: absolute;
+    right: 2%;
+    top: 5%;
+}
+
+.teletext {
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    text-align: left;
+    white-space: pre;
+    display: block;
+    font-size: 10px;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+}
+
+body, td.teletext {
+    font-family: "DjangoITC", monospace;
+    /* font-family: Mode7, monospace, courier, fixed; */
+    font-size: 10px;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+    color: #ffffff;
+    background: #353535;
+    line-height: 10px;
+}
+
+
+
+
+/*
+######################################################
+######################################################
+######### Main Page Elements #########################
+######################################################
+######################################################
+
+*/
+
+#main {
+    position: relative;
+    aspect-ratio: 720/576;
+    height: 576px;
+    margin: auto;
+    margin-top: 7%;
+
+    background: black;
+    overflow: hidden;
+}
+
+#topbar{
+    float: top;
+    width: 100%;
+    background: black;
+    margin-bottom: 5px;
+}
+
+#topbar > #timeOutput{
+    float: right;
+    height: 22px;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+#topbar > #timeOutput > span {
+    color: inherit;
+    font-size: 20px;
+    line-height: 21px;
+}
+
+#topbar > #rubrik {
+    height: 75px;
+    overflow: hidden;
+}
+
+#body{
+    width: 100%;
+    display: block;
+}
+
+#bottombar{
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+    justify-content: space-between;
+
+    width: 100%;
+    background: black;
+}
+.id_nr > pre {
+    display: inline-block;
+}
+
+.nav_icons {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    overflow: hidden;
+    top: 35px;
+    right: 5px;
+    position: absolute;
+}
+
+.nav_icons > .left_icon,
+.nav_icons > .right_icon {
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    overflow: hidden;
+
+    line-height: 7px;
+    font-size: 7px;
+
+}
+
+.nav_icons > .left_icon.active:hover,
+.nav_icons > .right_icon.active:hover {
+    color:black;
+}
+
+left_icon {
+
+}
+
+right_icon {
+
+}
+
+
+/*
+#bottombar > #Row1,
+#bottombar > #Row2 {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+#bottombar > #Row1 > a,
+#bottombar > #Row1 > div,
+#bottombar > #Row2 > a,
+#bottombar > #Row2 > div{
+    margin: auto;
+    margin-bottom: 1px;
+    display: inline-block;
+
+
+    font-size: 20pt;
+    line-height: 20px;
+
+    font-family: Mode7, monospace, courier, fixed;
+}
+
+ */
+#bottombar {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+#bottombar >  a,
+#bottombar > div{
+    margin: auto;
+    margin-bottom: 1px;
+    display: inline-block;
+
+
+    font-size: 12pt;
+    line-height: 15px;
+
+    /*font-family: Mode7, monospace, courier, fixed;*/
+}
+#bottombar >  a {
+    text-align: center;
+}
+
+#bottombar > pre {
+    font-family: Mode7, monospace, courier, fixed;
+    color: inherit;
+}
+
+/*
+######################################################
+######################################################
+############### Lines ################################
+######################################################
+######################################################
+
+*/
+
+.line1px {
+    display: block;
+
+    width: 90%;
+    height: 4px;
+
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1px;
+
+    background: white;
+    border: none;
+
+}
+
+
+/*
+######################################################
+######################################################
+######### Text Arrangement ###########################
+######################################################
+######################################################
+
+*/
+
+
+
+.textBlock {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    min-height: 20px;
+    overflow: hidden;
+
+}
+
+
+.leftSpace,
+.rightSpace {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+    min-height: 25px;
+    height: available;
+    padding-top: 5px;
+}
+
+
+.leftSpace{
+    padding-left: 15px;
+    float: left;
+    width: 70%;
+}
+
+.rightSpace{
+    padding-right: 15px;
+    float: right;
+}
+
+
+
+
+
+.body > .discription {
+    line-height: 22px;
+    font-size: 21px;
+}
+.body > .short_text {
+    line-height: 22px;
+    font-size: 20px;
+}
+/*
+######################################################
+######################################################
+######### Tools  Page ################################
+######################################################
+######################################################
+
+*/
+
+.tool {
+    line-height: 22px;
+    font-size: 21px;
+    display: inline-block;
+
+    width: 200px;
+    height: 130px;
+    overflow: hidden;
+
+    border: white 3px solid;
+
+    text-align: center;
+
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+
+
+}
+.tool_art {
+    line-height: 15px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+
+    height: 70px;
+
+}
+.tool_art_big {
+    line-height: 30px;
+    font-size: 30px;
+    overflow: hidden;
+    width: 220px;
+    float: right;
+    display: inline-block;
+}
+.tool > span > pre {
+    margin-top:-5px;
+}
+
+
+/*
+######################################################
+######################################################
+######### People Page ################################
+######################################################
+######################################################
+
+*/
+
+
+
+.peopleFrame {
+    height: 207px;
+    width: 210px;
+
+    display: inline-block;
+
+    padding: 3px;
+
+    border: white 3px solid;
+    margin: 7px 0px 7px 12px;
+}
+
+.peopleFrame > .picture {
+    width: 206px;
+    height: 160px;
+    /*border: white 2px solid;*/
+    margin-bottom: 5px;
+}
+
+.peopleFrame > .label {
+    width: 206px;
+    height: 35px;
+    /*border: white 2px solid;*/
+}
+
+.peopleFrame > .label > .name {
+    line-height: 14px;
+    font-size: 14px;
+
+    width: 100%;
+    text-align: center;
+
+}
+
+.peopleFrame > .label > .department {
+    line-height: 10px;
+    font-size: 10px;
+
+    width: 100%;
+    text-align: center;
+}
+
+
+/*
+######################################################
+######################################################
+######### Allgemeine Farben ##########################
+######################################################
+######################################################
+
+*/
+
+
+
+
+
+
+
+#weiss {
+    color: white;
+}
+
+#rot {
+    color: #ff0000;;
+}
+#blau {
+    color: #0000ff;
+}
+#gelb {
+    color: #ffff00;
+}
+#gruen {
+    color: #00ff00;
+}
+#magenta {
+    color: #ff00ff;
+}
+#cyan {
+    color: #00ffff;
+}
+
+.colour0bg, .blackbg     {background-color: #000000;}
+.colour1bg, .redbg         {background-color: #ff0000;}
+.colour2bg, .greenbg     {background-color: #00ff00;}
+.colour3bg, .yellowbg   {background-color: #ffff00;}
+.colour4bg, .bluebg       {background-color: #0000ff;}
+.colour5bg, .magentabg {background-color: #ff00ff;}
+.colour6bg, .cyanbg       {background-color: #00ffff;}
+.colour7bg, .whitebg     {background-color: #ffffff;}
+
+
+.colour0, .black,   a.black,   .black a    {color: #000000;}
+.colour1, .red,     a.red,     .red  a       {color: #ff0000;}
+.colour2, .green,   a.green,   .green  a   {color: #00ff00;}
+.colour3, .gelb,  a.gelb,  .gelb a  {color: #ffff00;}
+.colour4, .blue,    a.blue,    .blue a      {color: #0000ff;}
+.colour5, .magenta, a.magenta, .magenta a{color: #ff00ff;}
+.colour6, .cyan,    a.cyan,    .cyan  a     {color: #00ffff;}
+.colour7, .white,   a.white,   .white  a   {color: #ffffff;}
+
+
+
+
+#linie_rot {
+    background: red;
+    width: 100%;
+    height: 10px
+}
+#linie_blau {
+    background: #0000ff;
+    width: 100%;
+    height: 10px;
+}
+#linie_gelb {
+    background: #ffff00;
+    width: 100%;
+    height: 10px;
+}
+#linie_gruen {
+    background: #00ff00;
+    width: 100%;
+    height: 10px;
+}
+
+a {
+    text-decoration: none;
+}

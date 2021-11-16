@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags static %}
+<script src="./jquery_3.6.0.js"></script>
+
+<link href="./HLMT_Stylesheet.css" rel="stylesheet">
+<link rel="icon" href="./Logo_Quadrat.ico" type="image/x-icon">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="topbar">
+        <div id="timeOutput" style="color: black">
+
+
+        </div>
+        <div id="rubrik" class="teletext" style="float: left; z-index: 99999"><span class="redbg"> &#xe220;&#xe20c;&#xe20c;&#xe210;  &#xe220;     </span>
+<span class="redbg"> &#xe22a;  &#xe215;  &#xe22a;     </span>
+<span class="redbg"> &#xe22a;  &#xe215;  &#xe22a;     </span>
+<span class="redbg"> &#xe22a;  &#xe215;  &#xe22a;     </span>
+<span class="redbg"> &#xe22a;&#xe20c;&#xe20c;&#xe215;&#xe220;&#xe20c;&#xe22e; &#xe21c;&#xe20c;&#xe204; </span>
+<span class="redbg"> &#xe22a;  &#xe215;&#xe22a; &#xe22a; &#xe20d;&#xe20c;&#xe214; </span>
+<span class="redbg"> &#xe22a;  &#xe215;&#xe20a;&#xe230;&#xe23a; &#xe230;&#xe230;&#xe215; </span>
+<span class="redbg">             </span>
+
+            </div>
+        <div class="colour6bg" style="height: 75px;"></div>
+    </div>
+
+
+
+    <div id="body">
+        <div class="textBlock">
+            <div class="leftSpace">Lorem Ipsum</div>
+            <div class="rightSpace">dolor</div>
+        </div>
+        <div class="teletext" id="arrow_left">   &#xe218;&#xe239;
+  &#xe226;&#xe22e;&#xe23f;&#xe23f;&#xe23c;&#xe234;
+   &#xe209;&#xe21b; &#xe202;&#xe23f;&#xe215;
+      &#xe20e;&#xe207;
+        </div>
+        <div class="teletext" id="arrow_right">       &#xe236;&#xe224;
+    &#xe238;&#xe23c;&#xe23f;&#xe23f;&#xe21d;&#xe219;
+   &#xe20a;&#xe23f;&#xe211; &#xe227;&#xe206;
+    &#xe202;&#xe20f; </div>
+        <div class="teletext" id="twitter_logo">       <span class="cyan">&#xe210;    &#xe220;&#xe23e;&#xe23f;&#xe23d;&#xe230;&#xe210;</span>
+<span class="cyan">       &#xe23f;&#xe234;   &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe21d;&#xe204;</span>
+<span class="cyan">      &#xe228;&#xe232;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe215; </span>
+<span class="cyan">       &#xe20b;&#xe22f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe201; </span>
+<span class="cyan">       &#xe202;&#xe20f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe205;  </span>
+<span class="cyan">       &#xe238;&#xe23c;&#xe23e;&#xe23f;&#xe23f;&#xe23f;&#xe21f;&#xe201;   </span>
+<span class="cyan">        &#xe202;&#xe203;&#xe203;&#xe203;&#xe203;     </span></div>
+        <div class="teletext" id="facebook_logo"><span class="bluebg">  &#xe238;&#xe23c;&#xe23c; </span>
+<span class="bluebg">  &#xe23f;&#xe215;  </span>
+<span class="bluebg">&#xe20a;&#xe20f;&#xe23f;&#xe21f;&#xe20f; </span>
+<span class="bluebg">  &#xe23f;&#xe215;  </span>
+<span class="bluebg">  &#xe23f;&#xe215;  </span>
+<span class="bluebg">  &#xe20f;&#xe205;  </span>
+</div>
+        <div class="teletext" id="reddig_logo">          &#xe220;&#xe224;&#xe210;&#xe230;
+          &#xe216; &#xe20a;&#xe23f;&#xe205;
+      &#xe230; &#xe230;&#xe23a;&#xe230;&#xe210;&#xe220;&#xe210;
+     &#xe20a;&#xe23f;&#xe23f;&#xe20f;&#xe23f;&#xe21f;&#xe22f;&#xe23f;&#xe21f;
+      &#xe22f;&#xe23f;&#xe23c;&#xe23f;&#xe23d;&#xe23e;&#xe23f;&#xe205;
+      &#xe218;&#xe23e;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe21c;&#xe210;
+      &#xe215;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe215;&#xe215;
+      &#xe202;&#xe22f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe207;
+       &#xe232;&#xe23f;&#xe23f;&#xe23f;&#xe237;&#xe210;
+      &#xe20a;&#xe20c;&#xe20c;&#xe20f;&#xe20d;&#xe20c;&#xe20e;
+</div>
+        <div class="teletext">  <span class="blue">&#xe220;&#xe23e;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe234; </span>
+<span class="blue">  &#xe23f;&#xe23f;&#xe207; &#xe230;&#xe230;&#xe230;&#xe210;&#xe202;&#xe22f;&#xe21f;&#xe201;&#xe220;&#xe230;&#xe230;&#xe210;&#xe202;&#xe22f;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe234;  &#xe238;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;  &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;  &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;  &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;  &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;  &#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f; &#xe22a;&#xe23f;&#xe215;</span>
+<span class="blue">  &#xe22f;&#xe23f;&#xe230;&#xe23a;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe230;&#xe230;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe23f;&#xe230;&#xe23a;&#xe23f;&#xe205;</span>
+<span class="blue">   &#xe20b;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe20f;&#xe201; </span>
+</div>
+    </div>
+
+
+
+
+    <div id="bottombar">
+        <a href="100.html" class="colour1">Information <div class="id_nr"><pre class="colour1">[</pre>100<pre class="colour1">]</pre></div></a>
+        <a href="200.html" class="colour2">Disciplines <div class="id_nr"><pre class="colour2">[</pre>200<pre class="colour2">]</pre></div></a>
+        <a href="300.html" class="colour3">Tools <div class="id_nr"><pre class="colour3">[</pre>300<pre class="colour3">]</pre></div></a>
+
+        <a href="400.html" class="colour4">People <div class="id_nr"><pre class="colour4">[</pre>400<pre class="colour4">]</pre></div></a>
+        <a href="500.html" class="colour5">Contact <div class="id_nr"><pre class="colour5">[</pre>500<pre class="colour5">]</pre></div></a>
+        <a href="600.html" class="colour6">Ads <div class="id_nr"><pre class="colour6">[</pre>600<pre class="colour6">]</pre></div></a>
+    </div>
+</div>
+
+
+<script>
+
+const timeField = document.getElementById("timeOutput")
+console.log(timeField)
+
+async function updateTime() {
+    var seconds = ""
+    var minutes = ""
+    var hours = ""
+    var dt = new Date();
+
+    if (dt.getSeconds() % 2 == 0){
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + ":" + minutes + ":" + seconds + "</span>"
+
+    } else {
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + " " + minutes + " " + seconds + "</span>"
+
+    }
+    $("#time").remove()
+    $("#timeOutput").append(time);
+    console.log(time)
+    setTimeout(() => {
+                updateTime();
+            }, 200)
+
+
+}
+updateTime()
+</script>
+
+
+</body>
+</html>

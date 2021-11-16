@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load crispy_forms_tags static %}
+<script src="./jquery_3.6.0.js"></script>
+
+<link href="./HLMT_Stylesheet.css" rel="stylesheet">
+<link rel="icon" href="./Logo_Quadrat.ico" type="image/x-icon">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+
+</head>
+<body>
+
+<div id="main">
+    <div id="topbar">
+        <div id="timeOutput" style="color: black">
+
+
+        </div>
+        <div id="rubrik" class="teletext" style="float: left; z-index: 99999"><span class="redbg"> &#xe23c; &#xe228;&#xe214;  &#xe23c; &#xe228;&#xe23c;&#xe23c;&#xe23c;&#xe23c; &#xe228;&#xe21c;&#xe20c;&#xe20c;&#xe23c;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe23f;  &#xe23f; &#xe22a;&#xe215;    &#xe22a;&#xe215;  &#xe23f;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe215;&#xe229; &#xe23f; &#xe22a;&#xe215;    &#xe22a;&#xe215;  &#xe23f;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe215; &#xe215;&#xe23f; &#xe22a;&#xe21f;&#xe20f;&#xe20f;&#xe205; &#xe22a;&#xe215;  &#xe23f;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe215; &#xe22a;&#xe23f; &#xe22a;&#xe215;    &#xe22a;&#xe215;  &#xe23f;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe215; &#xe202;&#xe23f; &#xe22a;&#xe215;    &#xe22a;&#xe215;  &#xe23f;   </span>
+<span class="redbg"> &#xe23f; &#xe22a;&#xe215;  &#xe23f; &#xe22a;&#xe215;    &#xe22a;&#xe235;&#xe230;&#xe230;&#xe23f;   </span>
+<span class="redbg">                       </span>
+</div>
+        <div class="colour1bg" style="height: 75px;">
+            <div class="nav_icons">
+                    <div class="teletext left_icon" id="arrow_left"> &#xe218;&#xe239;
+&#xe226;&#xe22e;&#xe23f;&#xe23f;&#xe23c;&#xe234;
+ &#xe209;&#xe21b; &#xe202;&#xe23f;&#xe215;
+    &#xe20e;&#xe207;
+        </div>
+                    <div class="teletext right_icon active" id="arrow_right">   &#xe228;&#xe219;&#xe210;
+&#xe220;&#xe23c;&#xe23e;&#xe23f;&#xe23f;&#xe226;&#xe204;
+&#xe23f;&#xe217; &#xe20a;&#xe219;&#xe201;
+&#xe202;&#xe20f;&#xe204; </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="body">
+        <div class="textBlock">
+            <div class="leftSpace">Lorem Ipsum</div>
+            <div class="rightSpace">dolor</div>
+        </div>
+    </div>
+
+
+
+
+    <div id="bottombar">
+        <a href="100.html" class="colour1">Information <div class="id_nr"><pre class="colour1">[</pre>100<pre class="colour1">]</pre></div></a>
+        <a href="200.html" class="colour2">Disciplines <div class="id_nr"><pre class="colour2">[</pre>200<pre class="colour2">]</pre></div></a>
+        <a href="300.html" class="colour3">Tools <div class="id_nr"><pre class="colour3">[</pre>300<pre class="colour3">]</pre></div></a>
+
+        <a href="400.html" class="colour4">People <div class="id_nr"><pre class="colour4">[</pre>400<pre class="colour4">]</pre></div></a>
+        <a href="500.html" class="colour5">Contact <div class="id_nr"><pre class="colour5">[</pre>500<pre class="colour5">]</pre></div></a>
+        <a href="600.html" class="colour6">Ads <div class="id_nr"><pre class="colour6">[</pre>600<pre class="colour6">]</pre></div></a>
+    </div>
+</div>
+
+
+<script>
+
+const timeField = document.getElementById("timeOutput")
+console.log(timeField)
+
+async function updateTime() {
+    var seconds = ""
+    var minutes = ""
+    var hours = ""
+    var dt = new Date();
+
+    if (dt.getSeconds() % 2 == 0){
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + ":" + minutes + ":" + seconds + "</span>"
+
+    } else {
+        if (dt.getSeconds() < 10) {
+             seconds = "0" + dt.getSeconds();
+        } else {
+             seconds = dt.getSeconds();
+        }
+        if (dt.getMinutes() < 10) {
+             minutes = "0" + dt.getMinutes();
+        } else {
+             minutes = dt.getMinutes();
+        }
+        if (dt.getHours() < 10) {
+             hours = "0" + dt.getHours();
+        } else {
+             hours = dt.getHours();
+        }
+
+        var time = "<span id='time'>" + hours + " " + minutes + " " + seconds + "</span>"
+
+    }
+    $("#time").remove()
+    $("#timeOutput").append(time);
+    console.log(time)
+    setTimeout(() => {
+                updateTime();
+            }, 200)
+
+
+}
+updateTime()
+</script>
+
+
+</body>
+</html>
