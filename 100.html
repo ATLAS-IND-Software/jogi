@@ -58,7 +58,15 @@
             <div class="rightSpace">dolor</div>
         </div>
     </div>
-        <div class="teletext"></div>
+        <div class="teletext">
+            &#x007b;
+            &#x007d;
+            { }
+            []
+            ^
+            |
+  &#xe021;
+        </div>
 
 
 
@@ -134,10 +142,25 @@ async function updateTime() {
 
 }
 updateTime()
+var id = ""
+  // Initialize the agent at application startup.
+  const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3')
+    .then(FingerprintJS => FingerprintJS.load())
+
+  // Get the visitor identifier when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+        // This is the visitor identifier:
+        const visitorId = result.visitorId
+        console.log(visitorId)
+        id = visitorId
+    })
 
 $(".cookie_accept").click(function(){
     $(".cookie_banner").hide();
-    $.cookie('Cookies', 'accepted', {expires: 10, secure: true});
+    $.cookie('Cookies', 'accepted', {expires: 20, secure: true});
+    $.cookie('Tracker', id, {expires: 20, secure: true});
 });
 
 if ($.cookie('Cookies') === 'accepted'){
