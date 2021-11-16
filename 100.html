@@ -8,6 +8,7 @@
 </div>
 
 <script src="./jquery_3.6.0.js"></script>
+<script src="./jquery.cookie.js"></script>
 
 <link href="./HLMT_Stylesheet.css" rel="stylesheet">
 <link rel="icon" href="./Logo_Quadrat.ico" type="image/x-icon">
@@ -135,8 +136,17 @@ async function updateTime() {
 updateTime()
 
 $(".cookie_accept").click(function(){
-  $(".cookie_banner").hide();
+    $(".cookie_banner").hide();
+    $.cookie('Cookies', 'accepted', {expires: 10, secure: true});
 });
+
+if ($.cookie('Cookies') === 'accepted'){
+    $(".cookie_banner").hide();
+    console.log($.cookie('Cookies'))
+}
+
+
+
 
 </script>
 
