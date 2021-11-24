@@ -472,6 +472,7 @@ right_icon {
     width: 210px;
 
     display: inline-block;
+    overflow: hidden;
 
     padding: 3px;
 
