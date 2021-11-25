@@ -477,7 +477,7 @@ right_icon {
     padding: 3px;
 
     border: white 3px solid;
-    margin: 7px 0px 7px 12px;
+    margin: 15px 0px 7px 9px;
 }
 
 .peopleFrame > .picture {
@@ -508,6 +508,19 @@ right_icon {
 
     width: 100%;
     text-align: center;
+}
+.peopleFrame_big {
+    line-height: 13px;
+    font-size: 13px;
+    border: white solid 2px;
+    padding: 5px;
+
+    position: absolute;
+    right: 10px;
+    top: 50px;
+
+    width: 250px;
+    height: 250px;
 }
 
 
